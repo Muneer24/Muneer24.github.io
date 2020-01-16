@@ -1,0 +1,1 @@
+web: gunicorn bredadesignerbags.wsgi --log-file -

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+ {% block body%}
+<div class="container" style="padding-bottom: 20px;">
+<div class="login-wrap" style="max-width:750px ;min-height: 900px;">
+    <div class="login-html" style="padding:10px 10px 10px 10px;">
+        {% if registered %}
+<h3>Your Business has been posted!</h3>
+      </div>
+      {% else %}
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Upload your Business here:</label>
+        <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab"></i></label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <div class="group">
+          <form enctype="multipart/form-data" method="post">
+                      {% csrf_token %}
+                  <div class="row">
+                      <div class="form-group col-sm-6 mb-0">
+                        <label for="id_business_name">Your Business name:</label>
+                      <input type="text" style="height: 30px;" class="input" name="business_name" maxlength="150" id="id_business_name" />                      
+                    </div>
+                      <div class="form-group col-sm-6 mb-0">
+                      <label for="id_province">Province(where business is situated):</label>
+                      <input type="text" style="height: 30px;" class="input" name="province"  id="id_province" />
+                      </div> 
+                    </div>
+                      <!--endrow-->  
+                    <div class="form-group col-sm-12 mb-0" style="padding-bottom: 15px;">
+                      <label for="id_business_description">Tell us more about your business:</label>
+                      <input type="textarea" style="height: 70px;"class="input" name="business_description"  id="id_business_description" />
+                      </div>  
+               <!--endrow-->
+               <h5 style="color: white;" > Upload images of your business(Buyers will see these images when viewing your business)</h5>
+               <div class="hr" style="margin:0px 0px 0px 0px;"></div>
+               <div class="row">
+                      <div class="form-group col-sm-4 mb-0">
+                      <label for="id_business_display">Business display image:</label>
+                      <input type="file" style="height:45px;" class="input" name="business_display"  id="id_business_display" />
+                      </div> 
+                      <div class="form-group col-sm-4 mb-0">
+                      <label for="id_image">Image:</label>
+                      <input type="file" style="height:45px;" class="input" name="image"  id="id_image" />
+                      </div>  
+                      <div class="form-group col-sm-4 mb-0">
+                      <label for="id_business_image1">Business Imge1:</label>
+                      <input style="height:45px;"type="file" class="input" name="business_image1"  id="id_business_image1" />
+                      </div>  
+                    </div>
+                    <div class="row">          
+                      <div class="form-group col-sm-4 mb-0">
+                      <label for="id_business_image2">Business images:</label>
+                      <input type="file"  style="height:45px;" class="input" name="business_image2"  id="id_business_image2" />
+                      </div>    
+                      <div class="form-group col-sm-4 mb-0">
+                      <label for="id_business_image">Business image01:</label>
+                      <input type="file"  style="height:45px;" class="input" name="business_image"  id="id_business_image" />
+                      </div> 
+                    </div>            
+                <!--end images-->
+                <div class="row">
+                  <div class="form-group col-sm-6 mb-0">
+                  {{ profile_form.seller|as_crispy_field }}
+                  </div>
+                  <div class="form-group col-sm-6 mb-0">
+                  {{ profile_form.category|as_crispy_field}}
+                </div> 
+                </div> 
+                <!--endrow-->
+                <div class="row">  
+                  <div class="form-group col-sm-5 mb-0">
+                      {{ profile_form.price|as_crispy_field }}  
+                      </div>  
+                  <div class="form-group col-sm-4 mb-0">
+                     {{ profile_form.slug|as_crispy_field }}
+                      </div>  
+                    </div>                            
+                  <!--endrow-->            
+                      <div class="form-group col-sm-12 mb-0">
+                      <label for="id_active">Active:</label>
+                      <input type="checkbox" class="input" name="active"  id="id_active" />
+                      </div>
+                      <div class="form-group col-sm-12 mb-0" style="padding-bottom: 15px;">
+                      <label for="id_featured">Featured:</label>
+                      <input type="checkbox" class="input" name="featured"  id="id_featured" />
+                      </div>
+                      <!--endrow-->
+                    <div class="row">
+                      <div class="form-group col-sm-8 mb-0">
+                      <label for="id_name">Confirm your business name:</label>
+                      <input type="text" class="input" name="name"  id="id_name" />
+                      </div> 
+                    <div class="form-group col-sm-4 mb-0">
+                    <button type="submit" style ="background-color:green;" name=""class="button" value="Register">Click to Upload</button> 
+                    </div> 
+                  </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>      
+      {% endif %}
+{% endblock %}

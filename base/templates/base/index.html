@@ -1,0 +1,465 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+    <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-left">
+                <img src="{% static 'base/img/IMG-20200108-WA0015.jpg' %}" style="width: 120px; height: 50px;" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> BredaDesignerBags</strong></h1>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'base/img/IMG-20200108-WA0005.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> BredaDesignerBags</strong></h1>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-right">
+                <img src="{% static 'base/img/IMG-20200108-WA0009.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> BredaDesignerBags</strong></h1>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- End Slider -->
+
+    <!-- Start Categories  -->
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                {% for product in product %}
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{{ product.image.url }}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        <h3>{{ product.name }}</h3>
+                        <h5>{{ product.description }}</h5>
+                        <h6>R{{ product.price }}</h6>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+<!--
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0022.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Small Maroon Sling Bag <br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 120.00</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0000.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Big Grey Bow Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0002.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Black French Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 300.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200113-WA0013.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Brown Sling HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200113-WA0012.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Maroon HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0001.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Maroon Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0004.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Maroon Pocket Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200113-WA0011.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Big Black HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0005.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Turquoise HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0007.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Beach Sling HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0003.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Tan Backpack<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0006.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Tan Pocket Sling HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0008.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Goldy Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 200.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0011.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Tan Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 200.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0013.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Black Eyelet Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0015.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Black Backpack<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0014.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Beach Bag <br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0010.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Beach Backpack<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0019.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Navy Blue French Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0012.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Navy Blue Sling & HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0009.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Beach Backpack<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0017.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Turquoise Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0016.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Small Black Flap Sling Bag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 140.00</a>
+                    </div>
+                </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0007.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Beach Sling HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 250.00</a>
+                    </div>
+                </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box" style="height: 410px;">
+                        <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0018.jpg' %}" alt=""/>
+                        <a class="btn hvr-hover" style="height: 110px;" href="">
+                        Big Tan HandBag<br>
+                        Handmade<br>
+                        Fashionable quality bags<br>
+                        R 280.00</a>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!-- End Categories -->
+
+
+    <div class="latest-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h2 class="noo-sh-title">We are <span>BredaDesignerBags</span></h2>
+                    <h3>We are a online store that provides custom bags for those whom are interested in looking snazzy each an everyday.</h3>
+                    <h3>We strive to meet each different users request in terms of making the platform an enjoyable one, From BredaDesignerBags we hope that you find everything your looking for.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0012.jpg' %}" style="height: 350px; width: 500px;" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3>We are Trusted</h3>
+                        <p>Guarenteed 100% quality workmanship on all bags</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0007.jpg' %}" style="height: 350px; width: 500px;" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3>We are Professional</h3>
+                        <p>All custom bags will be completed in an appropriate time period </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img class="img-fluid" src="{% static 'base/img/IMG-20200108-WA0001.jpg' %}" style="height: 350px;" alt="" />
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3>We are Expert</h3>
+                        <p>Bags are made from the quality fabric in Cape Town. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog  -->
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0038.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0040.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0041.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0042.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0043.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0044.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0045.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0046.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0047.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'base/img/IMG-20200113-WA0036.jpg' %}" style="height: 150px;" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+{% endblock %}
+

@@ -1,0 +1,220 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BredaDesignerBags</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/custom.css' %}">
+    <link href="{% static 'base/css/shop-homepage.css' %}" rel="stylesheet">
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+
+<!--login&lgout-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+{% if user.is_authenticated %}
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-0d9a6f08-c8c4-4934-8605-139a3bd2c1a0"></div>
+{% endif %}
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+<body>
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">   
+                    <div class="our-link">
+                      <ul>
+                          <div id="popup-1" style="margin-left:-800px;justify-content: center;z-index: 20;">
+    <div class="popup-content">
+<div class="login-wrap"style="margin: 0px;">
+<button id="close-popup-1">X</button>
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">SignUp</label>
+        <div class="login-form" style="padding-top:9px;">
+            <div class="sign-in-htm">
+                <div class="group">
+                <form method="post" action="{% url 'base:login' %}">
+                    {% csrf_token %}
+                    <label for="username">Username:</label>
+                    <input id="username" style="height: 30px;"  class="input" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="group">
+                    <label for="password">Password:</label>
+                    <input id="password" style="height: 30px;"  class="input" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="group">
+                <button type="submit" name=""onclick="myFunction1()" class="button" value="Login">Login</button>
+          <script>
+function myFunction1() {
+  alert("Welcome to BredaDesignerBags!");
+}
+</script>
+            </form>
+                </div>
+                <div class="hr"></div>
+            </div>
+            <div class="for-pwd-htm">
+                <div class="group">
+    <form enctype="multipart/form-data" method="POST" action="{% url 'base:register'%}">
+          {% csrf_token %}
+ <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+        <label for="username">Username:</label>
+        <input id="username" style="height: 30px;"  class="input" type="text" name="username" placeholder="Username">
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        <label for="Password">Password:</label>
+        <input id="password" style="height: 30px;" class="input" type="password" name="password" placeholder="password">
+      </div>
+    </div>
+    <label for="email">Email:</label>
+    <input id="email" style="height: 30px;"  class="input" type="text" name="email" placeholder="email">
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+        <label for="profile_pic">Profile picture:</label>
+        <input id="profile_pic" style="height: 47px;" class="input" type="file" name="profile_pic" placeholder="profile_pic">
+      </div>
+    </div>
+
+           <button type="submit" class="button">Register</button>
+                     <script>
+function myFunction2() {
+  alert("Thank You Registering With BredaDesignerBags!");
+}
+</script>
+        </form>
+                </div>
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="main-site" style="width:100%;">
+    {% if user.is_authenticated %}
+            <li><a href="{% url 'base:logout' %}" onclick="myFunction2()">Logout</a></li>
+    {% else %}
+        <li><a id="open-popup-1" href="#" class="btn-get-started scrollto">Login/SignUp</a></li>
+    {% endif %}
+
+<script>
+function myFunction2() {
+  alert("Are you sure you want to logout?");
+}
+</script>
+</div>
+<script>
+    //pop up
+var popup1 = document.getElementById("popup-1")
+var openPopup1 = document.getElementById("open-popup-1")
+var closePopup1 = document.getElementById('close-popup-1')
+
+openPopup1.addEventListener('click', () => {
+    popup1.style.display = "block";
+})
+
+closePopup1.addEventListener('click', () => {
+    popup1.style.display = "none";
+})
+
+
+</script>
+  
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+    <!-- Start Main Top -->
+    <header class="main-header" >
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav"  style="z-index: 1;">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><img src="{% static 'base/img/' %}" style="width: 200px; margin-right: 10px;" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'base:index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'base:contact-us' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+            <!-- Start Side Menu -->
+            <!-- End Side Menu -->
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+    <!-- Start Top Search -->
+    <!-- End Top Search -->
+    <!-- Start Footer  -->
+    {% block body %}
+{% endblock %}
+    <!-- End Footer  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'base/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'base/js/popper.min.js' %}"></script>
+    <script src="{% static 'base/js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'base/js/jquery.superslides.min.js' %}"></script>
+    <script src="{% static 'base/js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'base/js/inewsticker.js' %}"></script>
+    <script src="{% static 'base/js/bootsnav.js.' %}"></script>
+    <script src="{% static 'base/js/images-loded.min.js' %}"></script>
+    <script src="{% static 'base/js/isotope.min.js' %}"></script>
+    <script src="{% static 'base/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'base/js/baguetteBox.min.js' %}"></script>
+    <script src="{% static 'base/js/form-validator.min.js' %}"></script>
+    <script src="{% static 'base/js/contact-form-script.js' %}"></script>
+    <script src="{% static 'base/js/custom.js' %}"></script>
+ </body>
+ </html>

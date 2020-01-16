@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+ <div class="container" style="z-index: 0;">
+    <div class="row"  >
+<div class="col-lg-2 ">
+          <h1 class="my-4">Categories</h1>
+          <div class="list-group">
+              {% for business in category.business_set.all %}
+                  <a href="{% url 'base:categories' %}" class="list-group-item">{{ business.description }}</a>
+              {% endfor %}
+{#            <a href="#" class="list-group-item">Category 1</a>#}
+{#            <a href="#" class="list-group-item">Category 2</a>#}
+{#            <a href="#" class="list-group-item">Category 3</a>#}
+          </div>
+
+        </div>
+<div class="col-lg-10 mt-5">
+    <h2 align="center">Find your business</h2>
+    <input style="height: 40px;"type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <br>
+    <hr>
+    <div id="myMenu">
+      {% for business in business %}
+      <h6 style="font-size:0px;margin-top: 0px; margin-bottom: 0px; padding:0px;">
+        <a href=""  style="color:#fff;">{{ business.description|title }}{{ business.price|floatformat:"2" }}</a>
+    <div class="col-lg-4 col-md-6 mb-5">
+              <div class='card' style="width:300px" name="{{ item.name|title }}">
+                <a href="#"><img class="card-img-top" onerror="this.src='https://www.tryngo.ch/img/no-img.jpg'" style="width:200;height:250px;"src="/media/{{ item.image }}" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="">{{ business.description|title }}</a>
+                  </h4>
+                  <h5>R. {{ business.price|floatformat:"2" }}</h5>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted"><a class="btn btn-success" href="{% url 'base:detail' item.slug %}">view more</a></small>
+                </div>
+              </div>
+            </div>
+            <br>
+            </h6>
+
+{% empty %}
+    <div class="card w-100">
+    <div class="card-body">
+        <h4>No business available in this category right now</h4>
+    </div>
+    </div>
+{% endfor %}
+    </div> 
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, div, h6, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myMenu");
+  h6 = div.getElementsByTagName("h6");
+
+  for (i = 0; i < h6.length; i++) {
+    a = h6[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      h6[i].style.display = "";
+    } else {
+      h6[i].style.display = "none";
+    }
+  }
+}
+</script>
+{% endblock %}
