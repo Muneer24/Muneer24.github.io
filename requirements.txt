@@ -15,7 +15,7 @@ django-search-views==0.3.7
 django-simple-search==1.0.2
 django-watson==1.5.2
 django-wishlist==1.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 phonenumbers==8.10.23
 Pillow==6.2.1
 psycopg2==2.8.4
